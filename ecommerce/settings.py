@@ -25,7 +25,6 @@ SECRET_KEY = 'z+ksf@)0d^qojbh4rnp4b1to$hq&*tt(3bs$gf(3i267g$k9ln'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -129,4 +128,4 @@ MEDIA_URL = '/images/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
-ALLOWED_HOSTS = ["13.203.156.209", "localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ["52.66.207.144", "localhost", "127.0.0.1"]
