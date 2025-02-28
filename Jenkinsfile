@@ -11,6 +11,19 @@ pipeline {
                 sh 'docker build -t my-django-app .'
             }
         }
+        stage('Scan with Trivy') {
+            steps {
+                sh '''
+                sudo apt-get update
+                sudo apt-get install -y wget apt-transport-https gnupg lsb-release
+                wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo tee /etc/apt/trusted.gpg.d/trivy.asc > /dev/null
+                echo "deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/trivy.list
+                sudo apt-get update
+                sudo apt-get install -y trivy
+                trivy image my-django-app || true
+                '''
+            }
+        }
         stage('Run Django Container') {
             steps {
                 sh 'docker stop my-django-app || true'
