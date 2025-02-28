@@ -128,4 +128,4 @@ MEDIA_URL = '/images/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
-ALLOWED_HOSTS = ["52.66.207.144", "localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ["13.51.150.129", "localhost", "127.0.0.1"]
