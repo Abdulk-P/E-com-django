@@ -127,5 +127,5 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/images/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['3.109.133.64', 'localhost', '127.0.0.1']
 
